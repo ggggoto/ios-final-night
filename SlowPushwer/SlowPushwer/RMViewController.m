@@ -25,7 +25,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    RMLpf *rmlpf = [[RMLpf alloc]init];
+    RMLpf *rmlpf = [[RMLpf alloc]init:20 cof1:0.01 cof2:0.99];
     rmlpf.delegate = self;
     
     threshLose = 2.5;
