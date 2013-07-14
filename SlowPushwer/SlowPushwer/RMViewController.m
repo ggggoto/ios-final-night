@@ -57,14 +57,14 @@
 - (void) btConnected:(NSString *)peerId
 {
     
-    NSLog(peerId);
+    //NSLog(peerId);
     
 }
 
 - (void) btMsgReceived:(NSString *)msg
 {
     
-    NSLog(msg);
+    //NSLog(msg);
     
 }
 
@@ -79,9 +79,11 @@
     
     UISlider *sl1 = [[UISlider alloc] initWithFrame:CGRectMake(30, 30, 250, 10)];
     [sl1 addTarget:self action:@selector(hoge1:)forControlEvents:UIControlEventValueChanged];
+    sl1.value = 0.5;
     
     UISlider *sl2 = [[UISlider alloc] initWithFrame:CGRectMake(30, 90, 250, 10)];
     [sl2 addTarget:self action:@selector(hoge2:)forControlEvents:UIControlEventValueChanged];
+    sl2.value = 0.25;
     
     [self.view addSubview:label1];
     [self.view addSubview:label2];

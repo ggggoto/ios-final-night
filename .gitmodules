@@ -1,0 +1,6 @@
+[submodule "framework-motion"]
+	path = framework-motion
+	url = git@github.com:cinemania/framework-motion.git
+[submodule "framework-bt"]
+	path = framework-bt
+	url = git@github.com:cinemania/framework-bt.git

@@ -23,11 +23,11 @@
 		F62BAA6817923C77000B783C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4317923C76000B783C /* Foundation.framework */; };
 		F62BAA7017923C77000B783C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F62BAA6E17923C77000B783C /* InfoPlist.strings */; };
 		F62BAA7317923C77000B783C /* SlowPushwerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F62BAA7217923C77000B783C /* SlowPushwerTests.m */; };
-		F62BAA89179246BC000B783C /* XlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA88179246BC000B783C /* XlKit.framework */; };
 		F62BAA921792528A000B783C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA911792528A000B783C /* CoreMotion.framework */; };
 		F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA96179262DD000B783C /* AudioToolbox.framework */; };
-		F678DF4A179282CB0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF49179282CB0050F052 /* BTKit.framework */; };
 		F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4B179282FC0050F052 /* GameKit.framework */; };
+		F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4D1792928A0050F052 /* XlKit.framework */; };
+		F678DF54179294FC0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF53179294FC0050F052 /* BTKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,11 +63,11 @@
 		F62BAA6F17923C77000B783C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F62BAA7117923C77000B783C /* SlowPushwerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowPushwerTests.h; sourceTree = "<group>"; };
 		F62BAA7217923C77000B783C /* SlowPushwerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowPushwerTests.m; sourceTree = "<group>"; };
-		F62BAA88179246BC000B783C /* XlKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XlKit.framework; path = "../../rmxl/Framework-iOS/Products/XlKit.framework"; sourceTree = "<group>"; };
 		F62BAA911792528A000B783C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		F62BAA96179262DD000B783C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		F678DF49179282CB0050F052 /* BTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BTKit.framework; path = "../../rmbt/Framework-iOS/Products/BTKit.framework"; sourceTree = "<group>"; };
 		F678DF4B179282FC0050F052 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		F678DF4D1792928A0050F052 /* XlKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XlKit.framework; path = "../framework-motion/Framework-iOS/Products/XlKit.framework"; sourceTree = "<group>"; };
+		F678DF53179294FC0050F052 /* BTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BTKit.framework; path = "../framework-bt/Framework-iOS/Products/BTKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +75,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F678DF54179294FC0050F052 /* BTKit.framework in Frameworks */,
+				F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */,
 				F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */,
-				F678DF4A179282CB0050F052 /* BTKit.framework in Frameworks */,
 				F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */,
 				F62BAA921792528A000B783C /* CoreMotion.framework in Frameworks */,
-				F62BAA89179246BC000B783C /* XlKit.framework in Frameworks */,
 				F62BAA4217923C76000B783C /* UIKit.framework in Frameworks */,
 				F62BAA4417923C76000B783C /* Foundation.framework in Frameworks */,
 				F62BAA4617923C76000B783C /* CoreGraphics.framework in Frameworks */,
@@ -102,8 +102,7 @@
 		F62BAA3517923C76000B783C = {
 			isa = PBXGroup;
 			children = (
-				F678DF49179282CB0050F052 /* BTKit.framework */,
-				F62BAA88179246BC000B783C /* XlKit.framework */,
+				F678DF53179294FC0050F052 /* BTKit.framework */,
 				F62BAA4717923C76000B783C /* SlowPushwer */,
 				F62BAA6B17923C77000B783C /* SlowPushwerTests */,
 				F62BAA4017923C76000B783C /* Frameworks */,
@@ -123,6 +122,7 @@
 		F62BAA4017923C76000B783C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F678DF4D1792928A0050F052 /* XlKit.framework */,
 				F678DF4B179282FC0050F052 /* GameKit.framework */,
 				F62BAA96179262DD000B783C /* AudioToolbox.framework */,
 				F62BAA911792528A000B783C /* CoreMotion.framework */,
@@ -404,6 +404,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../rmxl/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../../rmbt/Framework-iOS/Products\"",
+					"\"$(SRCROOT)/../framework-motion/Framework-iOS/Products\"",
+					"\"$(SRCROOT)/../../framework-bt/Framework-iOS/Products\"",
+					"\"$(SRCROOT)/../framework-bt/Framework-iOS/Products\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlowPushwer/SlowPushwer-Prefix.pch";
@@ -420,6 +423,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../rmxl/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../../rmbt/Framework-iOS/Products\"",
+					"\"$(SRCROOT)/../framework-motion/Framework-iOS/Products\"",
+					"\"$(SRCROOT)/../../framework-bt/Framework-iOS/Products\"",
+					"\"$(SRCROOT)/../framework-bt/Framework-iOS/Products\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlowPushwer/SlowPushwer-Prefix.pch";
