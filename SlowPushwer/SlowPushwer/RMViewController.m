@@ -25,8 +25,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    RMLpf *rmlpf = [[RMLpf alloc]init:20 cof1:0.01 cof2:0.99];
+    RMLpf *rmlpf = [[RMLpf alloc]init:20 c1:0.01 c2:0.99];
     rmlpf.delegate = self;
+    [rmlpf startLpf];
     
     threshLose = 2.5;
     threshAlert = 1.5;
@@ -104,7 +105,6 @@
 #pragma mark XlKit
 - (void)LpfUpdate:(float)rms
 {
-    
     if(rms>=threshLose){
         [self playBeepSound];
     }else if(rms>=threshAlert){
