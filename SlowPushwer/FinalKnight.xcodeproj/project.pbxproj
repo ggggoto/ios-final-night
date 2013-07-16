@@ -27,7 +27,7 @@
 		F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA96179262DD000B783C /* AudioToolbox.framework */; };
 		F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4B179282FC0050F052 /* GameKit.framework */; };
 		F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4D1792928A0050F052 /* XlKit.framework */; };
-		F678DF54179294FC0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF53179294FC0050F052 /* BTKit.framework */; };
+		F678DF551795740B0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF53179294FC0050F052 /* BTKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F678DF54179294FC0050F052 /* BTKit.framework in Frameworks */,
+				F678DF551795740B0050F052 /* BTKit.framework in Frameworks */,
 				F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */,
 				F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */,
 				F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */,
@@ -102,7 +102,6 @@
 		F62BAA3517923C76000B783C = {
 			isa = PBXGroup;
 			children = (
-				F678DF53179294FC0050F052 /* BTKit.framework */,
 				F62BAA4717923C76000B783C /* SlowPushwer */,
 				F62BAA6B17923C77000B783C /* SlowPushwerTests */,
 				F62BAA4017923C76000B783C /* Frameworks */,
@@ -122,6 +121,7 @@
 		F62BAA4017923C76000B783C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F678DF53179294FC0050F052 /* BTKit.framework */,
 				F678DF4D1792928A0050F052 /* XlKit.framework */,
 				F678DF4B179282FC0050F052 /* GameKit.framework */,
 				F62BAA96179262DD000B783C /* AudioToolbox.framework */,
@@ -229,7 +229,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = ramuh;
 			};
-			buildConfigurationList = F62BAA3917923C76000B783C /* Build configuration list for PBXProject "SlowPushwer" */;
+			buildConfigurationList = F62BAA3917923C76000B783C /* Build configuration list for PBXProject "FinalKnight" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -402,10 +402,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../rmxl/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../rmbt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-motion/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../framework-bt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-bt/Framework-iOS/Products\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -421,10 +418,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../rmxl/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../rmbt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-motion/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../framework-bt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-bt/Framework-iOS/Products\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -472,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F62BAA3917923C76000B783C /* Build configuration list for PBXProject "SlowPushwer" */ = {
+		F62BAA3917923C76000B783C /* Build configuration list for PBXProject "FinalKnight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F62BAA7417923C77000B783C /* Debug */,
