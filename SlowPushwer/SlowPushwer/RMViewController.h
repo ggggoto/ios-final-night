@@ -10,6 +10,6 @@
 #import <XlKit/XlKit.h>
 #import <BTKit/BTKit.h>
 
-@interface RMViewController : UIViewController<RMLpfDelegate>
+@interface RMViewController : UIViewController<RMLpfDelegate, RMBTPeripheralDelegate, RMBTCentralDelegate>
 
 @end

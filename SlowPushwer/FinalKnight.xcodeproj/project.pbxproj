@@ -25,9 +25,9 @@
 		F62BAA7317923C77000B783C /* SlowPushwerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F62BAA7217923C77000B783C /* SlowPushwerTests.m */; };
 		F62BAA921792528A000B783C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA911792528A000B783C /* CoreMotion.framework */; };
 		F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA96179262DD000B783C /* AudioToolbox.framework */; };
-		F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4B179282FC0050F052 /* GameKit.framework */; };
 		F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4D1792928A0050F052 /* XlKit.framework */; };
 		F678DF551795740B0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF53179294FC0050F052 /* BTKit.framework */; };
+		F6989DEE17ACECF500213D83 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6989DED17ACECF500213D83 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,7 @@
 		F678DF4B179282FC0050F052 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		F678DF4D1792928A0050F052 /* XlKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XlKit.framework; path = "../framework-motion/Framework-iOS/Products/XlKit.framework"; sourceTree = "<group>"; };
 		F678DF53179294FC0050F052 /* BTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BTKit.framework; path = "../framework-bt/Framework-iOS/Products/BTKit.framework"; sourceTree = "<group>"; };
+		F6989DED17ACECF500213D83 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6989DEE17ACECF500213D83 /* CoreBluetooth.framework in Frameworks */,
 				F678DF551795740B0050F052 /* BTKit.framework in Frameworks */,
 				F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */,
-				F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */,
 				F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */,
 				F62BAA921792528A000B783C /* CoreMotion.framework in Frameworks */,
 				F62BAA4217923C76000B783C /* UIKit.framework in Frameworks */,
@@ -121,6 +122,7 @@
 		F62BAA4017923C76000B783C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6989DED17ACECF500213D83 /* CoreBluetooth.framework */,
 				F678DF53179294FC0050F052 /* BTKit.framework */,
 				F678DF4D1792928A0050F052 /* XlKit.framework */,
 				F678DF4B179282FC0050F052 /* GameKit.framework */,

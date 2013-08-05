@@ -13,6 +13,9 @@
 
 #define threshCoef 10
 
+// definition of layout
+#define MARGIN_LEFT 10
+
 @interface RMViewController ()
 
 @end
@@ -24,6 +27,11 @@
     UILabel *num1;
     UILabel *num2;
     
+    UITextField *tf1;
+    UITextField *tf2;
+    
+    RMBTPeripheral *rmBtPeripheral;
+    RMBTCentral *rmBtCentral;
 }
 
 - (void)viewDidLoad
@@ -38,7 +46,9 @@
     threshLose = 2.5;
     threshAlert = 1.5;
     
-    [self setSliders];
+    //UI initialization
+    [self initializeSliders];
+    [self initializeBTConfigLayout];
     
 }
 
@@ -49,20 +59,21 @@
 }
 
 #pragma mark UI
-- (void) setSliders
+#pragma mark Sliders
+- (void) initializeSliders
 {
-    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(30, 10, 250, 20)];
+    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(MARGIN_LEFT, 10, 250, 20)];
     label1.text = @"threshold for lose";
 
-    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(30, 70, 250, 20)];
+    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(MARGIN_LEFT, 70, 250, 20)];
     label2.text = @"threshold for alert";
     
-    UISlider *sl1 = [[UISlider alloc] initWithFrame:CGRectMake(30, 30, 250, 10)];
-    [sl1 addTarget:self action:@selector(hoge1:)forControlEvents:UIControlEventValueChanged];
+    UISlider *sl1 = [[UISlider alloc] initWithFrame:CGRectMake(MARGIN_LEFT, 30, 250, 10)];
+    [sl1 addTarget:self action:@selector(sl1Changed:)forControlEvents:UIControlEventValueChanged];
     sl1.value = 0.5;
     
-    UISlider *sl2 = [[UISlider alloc] initWithFrame:CGRectMake(30, 90, 250, 10)];
-    [sl2 addTarget:self action:@selector(hoge2:)forControlEvents:UIControlEventValueChanged];
+    UISlider *sl2 = [[UISlider alloc] initWithFrame:CGRectMake(MARGIN_LEFT, 90, 250, 10)];
+    [sl2 addTarget:self action:@selector(sl2Changed:)forControlEvents:UIControlEventValueChanged];
     sl2.value = 0.25;
     
     num1 = [[UILabel alloc]initWithFrame:CGRectMake(200, 10, 250, 20)];
@@ -81,15 +92,69 @@
     [self.view addSubview:num2];
 }
 
--(void)hoge1:(UISlider*)slider
+-(void)sl1Changed:(UISlider*)slider
 {
     threshLose = slider.value * threshCoef;
     num1.text = [NSString stringWithFormat:@"%f", threshLose];
 }
 
--(void)hoge2:(UISlider*)slider{
+-(void)sl2Changed:(UISlider*)slider{
     threshAlert = slider.value * threshCoef;
     num2.text = [NSString stringWithFormat:@"%f", threshAlert];
+}
+
+#pragma mark Sliders
+- (void) initializeBTConfigLayout
+{
+
+    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn1 setTitle:@"peripheral start" forState:UIControlStateNormal];
+    btn1.frame = CGRectMake(MARGIN_LEFT, 180, 130, 30);
+    [btn1 addTarget:self action:@selector(btn1Pressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn2 setTitle:@"notification start" forState:UIControlStateNormal];
+    btn2.frame = CGRectMake(MARGIN_LEFT * 2 + 130, 180, 130, 30);
+    [btn2 addTarget:self action:@selector(btn2Pressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn3 setTitle:@"central start" forState:UIControlStateNormal];
+    btn3.frame = CGRectMake(MARGIN_LEFT, 250, 100, 30);
+    [btn3 addTarget:self action:@selector(btn3Pressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn1];
+    [self.view addSubview:btn2];
+    [self.view addSubview:btn3];
+    
+    tf1 = [[UITextField alloc] initWithFrame:CGRectMake(MARGIN_LEFT, 130, 130, 30)];
+    tf1.borderStyle = UITextBorderStyleRoundedRect;
+    tf1.placeholder = @"ID peripheral";
+    
+    tf2 = [[UITextField alloc] initWithFrame:CGRectMake(MARGIN_LEFT * 2 + 130, 130, 130, 30)];
+    tf2.borderStyle = UITextBorderStyleRoundedRect;
+    tf2.placeholder = @"ID central";
+    
+    [self.view addSubview:tf1];
+    [self.view addSubview:tf2];
+    
+}
+
+- (void) btn1Pressed
+{
+    [self initializePeripheral];
+}
+
+- (void) btn2Pressed
+{
+    NSData *data = [@"notification data etst test tset" dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *receivedString= [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", receivedString);
+    [rmBtPeripheral notifyData:data];
+}
+
+- (void) btn3Pressed
+{
+    [self initializecCentral];
 }
 
 #pragma mark XlKit
@@ -112,6 +177,19 @@
     AudioServicesPlaySystemSound(1016);
     threshLose -= 0.1;
     num1.text = [NSString stringWithFormat:@"%f", threshLose];
+}
+
+#pragma mark BT
+- (void) initializePeripheral
+{
+    rmBtPeripheral = [[RMBTPeripheral alloc]init];
+    [rmBtPeripheral initWithDelegate:self peripheralId:tf1.text];
+}
+
+- (void) initializecCentral
+{
+    rmBtCentral = [[RMBTCentral alloc]init];
+    [rmBtCentral initWithDelegate:self centralId:tf2.text];
 }
 
 @end
