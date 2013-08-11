@@ -141,6 +141,11 @@
     btn3.frame = CGRectMake(MARGIN_LEFT, 250, 100, 30);
     [btn3 addTarget:self action:@selector(btn3Pressed) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn4 setTitle:@"notification start" forState:UIControlStateNormal];
+    btn4.frame = CGRectMake(MARGIN_LEFT * 2 + 130, 250, 130, 30);
+    [btn4 addTarget:self action:@selector(btn4Pressed) forControlEvents:UIControlEventTouchUpInside];
+    
 //    [self.view addSubview:btn1];
 //    [self.view addSubview:btn2];
 //    [self.view addSubview:btn3];
@@ -148,6 +153,7 @@
     [sv addSubview:btn1];
     [sv addSubview:btn2];
     [sv addSubview:btn3];
+    [sv addSubview:btn4];
     
     tf1 = [[UITextField alloc] initWithFrame:CGRectMake(MARGIN_LEFT, 130, 130, 30)];
     tf1.borderStyle = UITextBorderStyleRoundedRect;
@@ -189,6 +195,14 @@
 - (void) btn3Pressed
 {
     [self initializecCentral];
+}
+
+- (void) btn4Pressed
+{
+    NSData *data = [@"write" dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *writeString= [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", writeString);
+    [rmBtCentral writeDataToPeriperal:data];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
