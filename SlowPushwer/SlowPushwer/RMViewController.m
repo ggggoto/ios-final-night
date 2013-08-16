@@ -90,16 +90,7 @@
     
     num2 = [[UILabel alloc]initWithFrame:CGRectMake(200, 70, 250, 20)];
     num2.text = [NSString stringWithFormat:@"%f",sl2.value * threshCoef];
-    
-//    [self.view addSubview:label1];
-//    [self.view addSubview:label2];
-//    
-//    [self.view addSubview:sl1];
-//    [self.view addSubview:sl2];
-//    
-//    [self.view addSubview:num1];
-//    [self.view addSubview:num2];
-    
+        
     [sv addSubview:label1];
     [sv addSubview:label2];
     
@@ -146,10 +137,6 @@
     btn4.frame = CGRectMake(MARGIN_LEFT * 2 + 130, 250, 130, 30);
     [btn4 addTarget:self action:@selector(btn4Pressed) forControlEvents:UIControlEventTouchUpInside];
     
-//    [self.view addSubview:btn1];
-//    [self.view addSubview:btn2];
-//    [self.view addSubview:btn3];
-
     [sv addSubview:btn1];
     [sv addSubview:btn2];
     [sv addSubview:btn3];
@@ -165,16 +152,12 @@
     tf2.delegate = self;
     tf2.placeholder = @"ID central";
     
-//    [self.view addSubview:tf1];
-//    [self.view addSubview:tf2];
-    
     [sv addSubview:tf1];
     [sv addSubview:tf2];
     
     tv = [[UITextView alloc] initWithFrame:CGRectMake(MARGIN_LEFT,300, 300, 200)];
     tv.editable = NO;
     
-//    [self.view addSubview:tv];
     [sv addSubview:tv];
     
 }
@@ -186,7 +169,7 @@
 
 - (void) btn2Pressed
 {
-    NSData *data = [@"notification data etst test tset" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [@"notification data test test tset" dataUsingEncoding:NSUTF8StringEncoding];
     NSString *receivedString= [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", receivedString);
     [rmBtPeripheral notifyData:data];
@@ -199,9 +182,7 @@
 
 - (void) btn4Pressed
 {
-    NSData *data = [@"write" dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *writeString= [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", writeString);
+    NSData *data = [@"writing data to characteristic. this must be long enough" dataUsingEncoding:NSUTF8StringEncoding];
     [rmBtCentral writeDataToPeriperal:data];
 }
 
@@ -228,8 +209,6 @@
 - (void) playAlertSound
 {
     AudioServicesPlaySystemSound(1016);
-    threshLose -= 0.1;
-    num1.text = [NSString stringWithFormat:@"%f", threshLose];
 }
 
 #pragma mark BT
@@ -246,6 +225,16 @@
 }
 
 #pragma mark RMBTPeripheralDelegate
+- (void) centralError:(NSString *)errorMsg
+{
+    NSLog(@"%@", errorMsg);
+}
+
+- (void) cannotFindServiceError
+{
+    NSLog(@"this is fatal error. BT setting needs to be off -> on to recover");
+}
+
 - (void) logPeripheral:(NSString *)logText
 {
     NSString *tmpString = [[[NSString alloc]initWithFormat:@"%@\n%@", tv.text, logText]autorelease];
