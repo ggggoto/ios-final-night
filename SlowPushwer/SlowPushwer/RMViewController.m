@@ -169,7 +169,7 @@
 
 - (void) btn2Pressed
 {
-    NSData *data = [@"notification data test test tset" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [@"This must be log string to be shown capability of data transfer" dataUsingEncoding:NSUTF8StringEncoding];
     NSString *receivedString= [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", receivedString);
     [rmBtPeripheral notifyData:data];
@@ -182,7 +182,7 @@
 
 - (void) btn4Pressed
 {
-    NSData *data = [@"writing data to characteristic. this must be long enough" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [@"Write balue to peripheral" dataUsingEncoding:NSUTF8StringEncoding];
     [rmBtCentral writeDataToPeriperal:data];
 }
 
