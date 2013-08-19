@@ -7,14 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XlKit/XlKit.h>
-#import <BTKit/BTKit.h>
 
-@interface RMViewController : UIViewController<
-UITextFieldDelegate,
-RMLpfDelegate,
-RMBTPeripheralDelegate,
-RMBTCentralDelegate
->
+@interface RMViewController : UIViewController
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F605FBD117C29103006350E2 /* RMDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = F605FBD017C29103006350E2 /* RMDebugView.m */; };
+		F605FBD517C294A9006350E2 /* FFT_Knights.png in Resources */ = {isa = PBXBuildFile; fileRef = F605FBD417C294A9006350E2 /* FFT_Knights.png */; };
 		F62BAA4217923C76000B783C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4117923C76000B783C /* UIKit.framework */; };
 		F62BAA4417923C76000B783C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4317923C76000B783C /* Foundation.framework */; };
 		F62BAA4617923C76000B783C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4517923C76000B783C /* CoreGraphics.framework */; };
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F605FBCF17C29103006350E2 /* RMDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMDebugView.h; path = RMDebugView/RMDebugView.h; sourceTree = "<group>"; };
+		F605FBD017C29103006350E2 /* RMDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMDebugView.m; path = RMDebugView/RMDebugView.m; sourceTree = "<group>"; };
+		F605FBD417C294A9006350E2 /* FFT_Knights.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FFT_Knights.png; sourceTree = "<group>"; };
 		F62BAA3E17923C76000B783C /* SlowPushwer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlowPushwer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62BAA4117923C76000B783C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F62BAA4317923C76000B783C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +105,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F605FBD217C294A9006350E2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F605FBD317C294A9006350E2 /* temp */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		F605FBD317C294A9006350E2 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				F605FBD417C294A9006350E2 /* FFT_Knights.png */,
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
 		F62BAA3517923C76000B783C = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +166,8 @@
 				F62BAA5C17923C76000B783C /* RMViewController.h */,
 				F62BAA5D17923C76000B783C /* RMViewController.m */,
 				F62BAA4817923C76000B783C /* Supporting Files */,
+				F605FBCF17C29103006350E2 /* RMDebugView.h */,
+				F605FBD017C29103006350E2 /* RMDebugView.m */,
 			);
 			path = SlowPushwer;
 			sourceTree = "<group>";
@@ -152,6 +175,7 @@
 		F62BAA4817923C76000B783C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F605FBD217C294A9006350E2 /* images */,
 				F62BAA4917923C76000B783C /* SlowPushwer-Info.plist */,
 				F62BAA4A17923C76000B783C /* InfoPlist.strings */,
 				F62BAA4D17923C76000B783C /* main.m */,
@@ -259,6 +283,7 @@
 				F62BAA5617923C76000B783C /* Default@2x.png in Resources */,
 				F62BAA5817923C76000B783C /* Default-568h@2x.png in Resources */,
 				F62BAA5B17923C76000B783C /* MainStoryboard.storyboard in Resources */,
+				F605FBD517C294A9006350E2 /* FFT_Knights.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +321,7 @@
 				F62BAA4E17923C76000B783C /* main.m in Sources */,
 				F62BAA5217923C76000B783C /* RMAppDelegate.m in Sources */,
 				F62BAA5E17923C76000B783C /* RMViewController.m in Sources */,
+				F605FBD117C29103006350E2 /* RMDebugView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
