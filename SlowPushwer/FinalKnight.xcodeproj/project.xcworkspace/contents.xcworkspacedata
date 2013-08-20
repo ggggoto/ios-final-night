@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SlowPushwer.xcodeproj">
+      location = "self:FinalKnight.xcodeproj">
    </FileRef>
 </Workspace>
