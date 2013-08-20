@@ -7,19 +7,17 @@
 //
 
 #import "RMViewController.h"
-#import "RMDebugView.h"
-
-#define threshCoef 10
-
-// definition of layout
-#define SCREEN_FRAME [[UIScreen mainScreen] applicationFrame]
+#import <XlKit/XlKit.h>
+#import <BTKit/BTKit.h>
+#import <AudioToolbox/AudioServices.h>
 
 @interface RMViewController ()
 
 @end
 
 @implementation RMViewController{
-    
+    float threshLose;
+    float threshAlert;
 }
 
 - (void)viewDidLoad
@@ -27,7 +25,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self initializeLayout];
+    RMLpf *rmlpf = [[RMLpf alloc]init:20 cof1:0.01 cof2:0.99];
+    rmlpf.delegate = self;
+    
+    threshLose = 2.5;
+    threshAlert = 1.5;
+    
+    [self initializeBluetooth];
+    
+    [self setSliders];
     
 }
 
@@ -37,65 +43,83 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark BT
+#pragma mark -
+#pragma mark Bluetooth
+
+- (void) initializeBluetooth
+{
+    RMbt *bluetoothConnection = [[RMbt alloc]init];
+    bluetoothConnection.delegate = self;
+    [bluetoothConnection initializeBluetooth];
+}
+
+- (void) btConnected:(NSString *)peerId
+{
+    
+    //NSLog(peerId);
+    
+}
+
+- (void) btMsgReceived:(NSString *)msg
+{
+    
+    //NSLog(msg);
+    
+}
+
 #pragma mark UI
-
-#pragma mark Sliders
-- (void) initializeLayout
+- (void) setSliders
 {
+    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(30, 10, 250, 20)];
+    label1.text = @"threshold for lose";
     
-    UIImage *image = [UIImage imageNamed:@"FFT_Knights.png"];
-    UIImageView *titleFigure = [[UIImageView alloc] initWithImage:image];
-    titleFigure.frame = CGRectMake(20, 20, 269, 371);
+    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(30, 70, 250, 20)];
+    label2.text = @"threshold for alert";
     
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [btn1 setTitle:@"game start" forState:UIControlStateNormal];
-    btn1.frame = CGRectMake(20, 300, 130, 60);
-    [btn1 addTarget:self action:@selector(btn1Pressed) forControlEvents:UIControlEventTouchUpInside];
+    UISlider *sl1 = [[UISlider alloc] initWithFrame:CGRectMake(30, 30, 250, 10)];
+    [sl1 addTarget:self action:@selector(hoge1:)forControlEvents:UIControlEventValueChanged];
+    sl1.value = 0.5;
     
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [btn2 setTitle:@"debug start" forState:UIControlStateNormal];
-    btn2.frame = CGRectMake(20 * 2 + 130, 300, 130, 60);
-    [btn2 addTarget:self action:@selector(btn2Pressed) forControlEvents:UIControlEventTouchUpInside];
+    UISlider *sl2 = [[UISlider alloc] initWithFrame:CGRectMake(30, 90, 250, 10)];
+    [sl2 addTarget:self action:@selector(hoge2:)forControlEvents:UIControlEventValueChanged];
+    sl2.value = 0.25;
     
-    [self.view addSubview:titleFigure];
-    [self.view addSubview:btn1];
-    [self.view addSubview:btn2];
+    [self.view addSubview:label1];
+    [self.view addSubview:label2];
     
-    titleFigure.alpha = 0.0;
-    btn1.alpha = 0.0;
-    btn2.alpha = 0.0;
-    [UIView animateWithDuration:1.5
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         //Animation
-                         titleFigure.alpha = 1.0;
-                     }
-                     completion:^(BOOL finished){
-                         //Completion
-                         [UIView animateWithDuration:0.7
-                                               delay:0.0
-                                             options:UIViewAnimationOptionCurveEaseInOut
-                                          animations:^{
-                                              //Animation
-                                              btn1.alpha = 1.0;
-                                              btn2.alpha = 1.0;
-                                          }
-                                          completion:^(BOOL finished){
-                                              //Completion
-                                          }];
-                     }];
-
+    [self.view addSubview:sl1];
+    [self.view addSubview:sl2];
 }
 
-- (void) btn1Pressed
+-(void)hoge1:(UISlider*)slider
 {
-    NSLog(@"test");
+    threshLose = slider.value * 5;
 }
 
-- (void) btn2Pressed
-{
-    RMDebugView *rmDebugView = [[RMDebugView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_FRAME.size.width, SCREEN_FRAME.size.height)];
-    [self.view addSubview:rmDebugView];
+-(void)hoge2:(UISlider*)slider{
+    threshAlert = slider.value * 5;
 }
+
+#pragma mark XlKit
+- (void)LpfUpdate:(float)rms
+{
+    
+    if(rms>=threshLose){
+        [self playBeepSound];
+    }else if(rms>=threshAlert){
+        [self playAlertSound];
+    }
+}
+
+- (void) playBeepSound
+{
+    AudioServicesPlaySystemSound(1008);
+}
+
+- (void) playAlertSound
+{
+    AudioServicesPlaySystemSound(1016);
+}
+
 @end

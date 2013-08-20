@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <XlKit/XlKit.h>
+#import <BTKit/BTKit.h>
 
-@interface RMViewController : UIViewController
+@interface RMViewController : UIViewController<RMLpfDelegate, BlueToothConnectionDelegate>
 
 @end
