@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F605FBD117C29103006350E2 /* RMDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = F605FBD017C29103006350E2 /* RMDebugView.m */; };
+		F605FBD517C294A9006350E2 /* FFT_Knights.png in Resources */ = {isa = PBXBuildFile; fileRef = F605FBD417C294A9006350E2 /* FFT_Knights.png */; };
 		F62BAA4217923C76000B783C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4117923C76000B783C /* UIKit.framework */; };
 		F62BAA4417923C76000B783C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4317923C76000B783C /* Foundation.framework */; };
 		F62BAA4617923C76000B783C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA4517923C76000B783C /* CoreGraphics.framework */; };
@@ -25,9 +27,9 @@
 		F62BAA7317923C77000B783C /* SlowPushwerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F62BAA7217923C77000B783C /* SlowPushwerTests.m */; };
 		F62BAA921792528A000B783C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA911792528A000B783C /* CoreMotion.framework */; };
 		F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BAA96179262DD000B783C /* AudioToolbox.framework */; };
-		F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4B179282FC0050F052 /* GameKit.framework */; };
 		F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF4D1792928A0050F052 /* XlKit.framework */; };
-		F678DF54179294FC0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF53179294FC0050F052 /* BTKit.framework */; };
+		F678DF551795740B0050F052 /* BTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F678DF53179294FC0050F052 /* BTKit.framework */; };
+		F6989DEE17ACECF500213D83 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6989DED17ACECF500213D83 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F605FBCF17C29103006350E2 /* RMDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMDebugView.h; path = RMDebugView/RMDebugView.h; sourceTree = "<group>"; };
+		F605FBD017C29103006350E2 /* RMDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMDebugView.m; path = RMDebugView/RMDebugView.m; sourceTree = "<group>"; };
+		F605FBD417C294A9006350E2 /* FFT_Knights.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FFT_Knights.png; sourceTree = "<group>"; };
 		F62BAA3E17923C76000B783C /* SlowPushwer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlowPushwer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62BAA4117923C76000B783C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F62BAA4317923C76000B783C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +73,7 @@
 		F678DF4B179282FC0050F052 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		F678DF4D1792928A0050F052 /* XlKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XlKit.framework; path = "../framework-motion/Framework-iOS/Products/XlKit.framework"; sourceTree = "<group>"; };
 		F678DF53179294FC0050F052 /* BTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BTKit.framework; path = "../framework-bt/Framework-iOS/Products/BTKit.framework"; sourceTree = "<group>"; };
+		F6989DED17ACECF500213D83 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F678DF54179294FC0050F052 /* BTKit.framework in Frameworks */,
+				F6989DEE17ACECF500213D83 /* CoreBluetooth.framework in Frameworks */,
+				F678DF551795740B0050F052 /* BTKit.framework in Frameworks */,
 				F678DF4E1792928A0050F052 /* XlKit.framework in Frameworks */,
-				F678DF4C179282FC0050F052 /* GameKit.framework in Frameworks */,
 				F62BAA97179262DD000B783C /* AudioToolbox.framework in Frameworks */,
 				F62BAA921792528A000B783C /* CoreMotion.framework in Frameworks */,
 				F62BAA4217923C76000B783C /* UIKit.framework in Frameworks */,
@@ -99,10 +105,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F605FBD217C294A9006350E2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F605FBD317C294A9006350E2 /* temp */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		F605FBD317C294A9006350E2 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				F605FBD417C294A9006350E2 /* FFT_Knights.png */,
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
 		F62BAA3517923C76000B783C = {
 			isa = PBXGroup;
 			children = (
-				F678DF53179294FC0050F052 /* BTKit.framework */,
 				F62BAA4717923C76000B783C /* SlowPushwer */,
 				F62BAA6B17923C77000B783C /* SlowPushwerTests */,
 				F62BAA4017923C76000B783C /* Frameworks */,
@@ -122,6 +143,8 @@
 		F62BAA4017923C76000B783C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6989DED17ACECF500213D83 /* CoreBluetooth.framework */,
+				F678DF53179294FC0050F052 /* BTKit.framework */,
 				F678DF4D1792928A0050F052 /* XlKit.framework */,
 				F678DF4B179282FC0050F052 /* GameKit.framework */,
 				F62BAA96179262DD000B783C /* AudioToolbox.framework */,
@@ -143,6 +166,8 @@
 				F62BAA5C17923C76000B783C /* RMViewController.h */,
 				F62BAA5D17923C76000B783C /* RMViewController.m */,
 				F62BAA4817923C76000B783C /* Supporting Files */,
+				F605FBCF17C29103006350E2 /* RMDebugView.h */,
+				F605FBD017C29103006350E2 /* RMDebugView.m */,
 			);
 			path = SlowPushwer;
 			sourceTree = "<group>";
@@ -150,6 +175,7 @@
 		F62BAA4817923C76000B783C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F605FBD217C294A9006350E2 /* images */,
 				F62BAA4917923C76000B783C /* SlowPushwer-Info.plist */,
 				F62BAA4A17923C76000B783C /* InfoPlist.strings */,
 				F62BAA4D17923C76000B783C /* main.m */,
@@ -229,7 +255,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = ramuh;
 			};
-			buildConfigurationList = F62BAA3917923C76000B783C /* Build configuration list for PBXProject "SlowPushwer" */;
+			buildConfigurationList = F62BAA3917923C76000B783C /* Build configuration list for PBXProject "FinalKnight" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -257,6 +283,7 @@
 				F62BAA5617923C76000B783C /* Default@2x.png in Resources */,
 				F62BAA5817923C76000B783C /* Default-568h@2x.png in Resources */,
 				F62BAA5B17923C76000B783C /* MainStoryboard.storyboard in Resources */,
+				F605FBD517C294A9006350E2 /* FFT_Knights.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +321,7 @@
 				F62BAA4E17923C76000B783C /* main.m in Sources */,
 				F62BAA5217923C76000B783C /* RMAppDelegate.m in Sources */,
 				F62BAA5E17923C76000B783C /* RMViewController.m in Sources */,
+				F605FBD117C29103006350E2 /* RMDebugView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +430,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../rmxl/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../rmbt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-motion/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../framework-bt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-bt/Framework-iOS/Products\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -421,10 +446,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../rmxl/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../rmbt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-motion/Framework-iOS/Products\"",
-					"\"$(SRCROOT)/../../framework-bt/Framework-iOS/Products\"",
 					"\"$(SRCROOT)/../framework-bt/Framework-iOS/Products\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -472,7 +494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F62BAA3917923C76000B783C /* Build configuration list for PBXProject "SlowPushwer" */ = {
+		F62BAA3917923C76000B783C /* Build configuration list for PBXProject "FinalKnight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F62BAA7417923C77000B783C /* Debug */,

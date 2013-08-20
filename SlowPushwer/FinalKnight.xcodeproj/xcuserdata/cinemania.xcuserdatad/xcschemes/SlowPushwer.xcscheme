@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F62BAA3D17923C76000B783C"
                BuildableName = "SlowPushwer.app"
                BlueprintName = "SlowPushwer"
-               ReferencedContainer = "container:SlowPushwer.xcodeproj">
+               ReferencedContainer = "container:FinalKnight.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "F62BAA6317923C77000B783C"
                BuildableName = "SlowPushwerTests.octest"
                BlueprintName = "SlowPushwerTests"
-               ReferencedContainer = "container:SlowPushwer.xcodeproj">
+               ReferencedContainer = "container:FinalKnight.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "F62BAA3D17923C76000B783C"
             BuildableName = "SlowPushwer.app"
             BlueprintName = "SlowPushwer"
-            ReferencedContainer = "container:SlowPushwer.xcodeproj">
+            ReferencedContainer = "container:FinalKnight.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "F62BAA3D17923C76000B783C"
             BuildableName = "SlowPushwer.app"
             BlueprintName = "SlowPushwer"
-            ReferencedContainer = "container:SlowPushwer.xcodeproj">
+            ReferencedContainer = "container:FinalKnight.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "F62BAA3D17923C76000B783C"
             BuildableName = "SlowPushwer.app"
             BlueprintName = "SlowPushwer"
-            ReferencedContainer = "container:SlowPushwer.xcodeproj">
+            ReferencedContainer = "container:FinalKnight.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
